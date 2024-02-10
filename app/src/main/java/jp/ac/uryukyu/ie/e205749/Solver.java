@@ -11,11 +11,23 @@ public class Solver {
     }
 
     /* CPUが手を選択する． */
-    public int getCpuChoice() {
+    public int getCPUChoice() {
         int CPUchoice = this.random.nextInt(3);
-        System.out.println("CPUの選んだ値:" + CPUchoice);
-        
+        //System.out.println("CPUの選んだ値:" + CPUchoice);
         return CPUchoice;
+    }
+
+    /* CPUが選んだ手を出力する． */
+    public void printCPUChoice(int CPUchoice) {
+        if (CPUchoice == 0) {
+            System.out.println("CPUはグーを出した!");
+        }
+        if (CPUchoice == 1) {
+            System.out.println("CPUはチョキを出した!");
+        }
+        if (CPUchoice == 2) {
+            System.out.println("CPUはパーを出した!");
+        }
     }
 
     /* プレイヤーに自らの手を選択させる． */
@@ -33,7 +45,7 @@ public class Solver {
                 }
             } else {
                 System.out.println("その値は無効です．整数を入力してください．");
-                scanner.next(); // 不正な入力を捨てる
+                scanner.next(); // 無効な入力を捨てる
             }
         }
         return Pchoice;
@@ -66,4 +78,3 @@ public class Solver {
         }
     }
 }
-
