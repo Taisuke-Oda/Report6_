@@ -9,9 +9,14 @@ import java.util.Scanner;
 
         Solver solver = new Solver();
 
+
+        int CPUchoice = solver.getCpuChoice();
+
         int number = solver.getPlayerChoice(scanner);
         solver.printPlayerChoice(number);
 
         scanner.close();
+        
+        solver.judge(number, CPUchoice);
     }
 }
